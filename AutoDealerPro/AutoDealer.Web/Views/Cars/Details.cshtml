@@ -1,0 +1,88 @@
+﻿@using AutoDealer.Data.Models
+@model Car
+
+@{
+    ViewData["Title"] = "Detalii Masina";
+}
+
+<div class="container mt-4">
+    <h1>@Model.Model.Brand.Name @Model.Model.Name</h1>
+    <hr />
+    <dl class="row align-items-center">
+        <dt class="col-sm-3 align-self-center">Preț Actual</dt>
+        <dd class="col-sm-9 mb-4">
+            <div class="d-flex align-items-center">
+                <span class="fw-bold text-success display-6 me-3">
+                    @Model.Price.ToString("N0") $
+                </span>
+
+                @if (ViewBag.PriceEur != null && (double)ViewBag.PriceEur > 0)
+                {
+                    <div class="border-start ps-3 text-muted" style="line-height: 1.2;">
+                        <div class="small">
+                            ≈ @(((double)ViewBag.PriceEur).ToString("N2")) €
+                        </div>
+                        <div class="small">
+                            ≈ @(((double)ViewBag.PriceRon).ToString("N2")) RON
+                        </div>
+                    </div>
+                }
+            </div>
+        </dd>
+
+        <dt class="col-sm-3 text-primary align-self-center">
+            <i class="bi bi-robot"></i> Estimare Model:
+        </dt>
+        <dd class="col-sm-9 mb-3">
+            @if (ViewBag.PredictedPrice != null && (double)ViewBag.PredictedPrice > 0)
+            {
+                <div class="d-flex align-items-center">
+                    <span class="fw-bold text-primary fs-4 me-3">
+                        @(((double)ViewBag.PredictedPrice).ToString("N0")) $
+                    </span>
+
+                    @if ((double)ViewBag.PredictedPrice < (double)Model.Price)
+                    {
+                        <span class="badge bg-warning text-dark shadow-sm">Pret peste piata</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success shadow-sm">Oferta buna</span>
+                    }
+
+                    @if (ViewBag.PredEur != null)
+                    {
+                        <div class="border-start ps-3 ms-3 text-muted" style="line-height: 1.2;">
+                            <div class="small" style="font-size: 0.85rem;">
+                                ≈ @(((double)ViewBag.PredEur).ToString("N2")) €
+                            </div>
+                            <div class="small" style="font-size: 0.85rem;">
+                                ≈ @(((double)ViewBag.PredRon).ToString("N2")) RON
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <span class="text-muted fst-italic">Serviciul de estimare este momentan indisponibil.</span>
+            }
+        </dd>
+
+        <dt class="col-sm-3">An</dt>
+        <dd class="col-sm-9">@Model.Year</dd>
+
+        <dt class="col-sm-3">Motor</dt>
+        <dd class="col-sm-9">@Model.Horsepower HP (@Model.EngineVolume L)</dd>
+
+        <dt class="col-sm-3">Transmisie</dt>
+        <dd class="col-sm-9">@Model.Transmission.Name</dd>
+
+        <dt class="col-sm-3">Accident?</dt>
+        <dd class="col-sm-9">@(Model.HasAccident ? "DA (Raportat)" : "Nu")</dd>
+    </dl>
+
+    <div class="mt-4">
+        <a asp-action="Index" class="btn btn-secondary">Inapoi la Lista</a>
+    </div>
+</div>

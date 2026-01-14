@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="AutoDealer.API/AutoDealer.API.csproj" Id="7b07dcca-230d-48da-b61d-d37db87f229f" />
+  <Project Path="AutoDealer.Data/AutoDealer.Data.csproj" Id="a8a9cbe3-6431-4d84-8e51-a740809b0d52" />
+  <Project Path="AutoDealer.GRPC/AutoDealer.GRPC.csproj" Id="5022930d-a81e-45af-a5c9-4281f436d242" />
+  <Project Path="AutoDealer.Web/AutoDealer.Web.csproj" Id="96b6444b-d508-4fb7-bb4e-70f699d76db0" />
+</Solution>

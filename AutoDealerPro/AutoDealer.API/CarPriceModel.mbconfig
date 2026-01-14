@@ -1,0 +1,607 @@
+﻿{
+  "Scenario": "Regression",
+  "DataSource": {
+    "Version": 3,
+    "EscapeCharacter": "\"",
+    "ReadMultiLines": false,
+    "KeepDiacritics": false,
+    "KeepPunctuations": false,
+    "AllowQuoting": false,
+    "Type": "TabularFile",
+    "FilePath": "C:\\HDD\\Facultate\\An 1\\Semestru 1\\Covaci\\Laboratoare\\Project\\train.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "id",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "brand",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "model",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "model_year",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "milage",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "fuel_type",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "engine",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "transmission",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "ext_col",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "int_col",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "accident",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "clean_title",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "price",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.095140588137795468,
+        "RuntimeInSeconds": 4.262,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e8 * e9 * e10 * e13",
+          "e0": {
+            "OutputColumnNames": [
+              "accident"
+            ],
+            "InputColumnNames": [
+              "accident"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "id",
+              "model_year",
+              "milage"
+            ],
+            "InputColumnNames": [
+              "id",
+              "model_year",
+              "milage"
+            ]
+          },
+          "e10": {
+            "InputColumnNames": [
+              "accident",
+              "id",
+              "model_year",
+              "milage",
+              "brand",
+              "model",
+              "fuel_type",
+              "engine",
+              "transmission",
+              "ext_col",
+              "int_col",
+              "clean_title"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e13": {
+            "NumberOfLeaves": 1225,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 0.30840620155797854,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 0.32242346990080722,
+            "MaximumBinCountPerFeature": 241,
+            "FeatureFraction": 0.99999999,
+            "L1Regularization": 1.0033647599190106E-09,
+            "L2Regularization": 0.99999977667298645,
+            "LabelColumnName": "price",
+            "FeatureColumnName": "Features"
+          },
+          "e2": {
+            "InputColumnName": "brand",
+            "OutputColumnName": "brand"
+          },
+          "e3": {
+            "InputColumnName": "model",
+            "OutputColumnName": "model"
+          },
+          "e4": {
+            "InputColumnName": "fuel_type",
+            "OutputColumnName": "fuel_type"
+          },
+          "e5": {
+            "InputColumnName": "engine",
+            "OutputColumnName": "engine"
+          },
+          "e6": {
+            "InputColumnName": "transmission",
+            "OutputColumnName": "transmission"
+          },
+          "e7": {
+            "InputColumnName": "ext_col",
+            "OutputColumnName": "ext_col"
+          },
+          "e8": {
+            "InputColumnName": "int_col",
+            "OutputColumnName": "int_col"
+          },
+          "e9": {
+            "InputColumnName": "clean_title",
+            "OutputColumnName": "clean_title"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeRegression",
+        "Score": 0.092150834749781363,
+        "RuntimeInSeconds": 2.867,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e8 * e9 * e10 * e11",
+          "e0": {
+            "OutputColumnNames": [
+              "accident"
+            ],
+            "InputColumnNames": [
+              "accident"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "id",
+              "model_year",
+              "milage"
+            ],
+            "InputColumnNames": [
+              "id",
+              "model_year",
+              "milage"
+            ]
+          },
+          "e10": {
+            "InputColumnNames": [
+              "accident",
+              "id",
+              "model_year",
+              "milage",
+              "brand",
+              "model",
+              "fuel_type",
+              "engine",
+              "transmission",
+              "ext_col",
+              "int_col",
+              "clean_title"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e11": {
+            "NumberOfLeaves": 18,
+            "MinimumExampleCountPerLeaf": 18,
+            "NumberOfTrees": 21,
+            "MaximumBinCountPerFeature": 989,
+            "FeatureFraction": 0.82395264509125121,
+            "LearningRate": 0.17671302265853192,
+            "LabelColumnName": "price",
+            "FeatureColumnName": "Features",
+            "DiskTranspose": false
+          },
+          "e2": {
+            "InputColumnName": "brand",
+            "OutputColumnName": "brand"
+          },
+          "e3": {
+            "InputColumnName": "model",
+            "OutputColumnName": "model"
+          },
+          "e4": {
+            "InputColumnName": "fuel_type",
+            "OutputColumnName": "fuel_type"
+          },
+          "e5": {
+            "InputColumnName": "engine",
+            "OutputColumnName": "engine"
+          },
+          "e6": {
+            "InputColumnName": "transmission",
+            "OutputColumnName": "transmission"
+          },
+          "e7": {
+            "InputColumnName": "ext_col",
+            "OutputColumnName": "ext_col"
+          },
+          "e8": {
+            "InputColumnName": "int_col",
+            "OutputColumnName": "int_col"
+          },
+          "e9": {
+            "InputColumnName": "clean_title",
+            "OutputColumnName": "clean_title"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.0915201970429087,
+        "RuntimeInSeconds": 2.639,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e8 * e9 * e10 * e12",
+          "e0": {
+            "OutputColumnNames": [
+              "accident"
+            ],
+            "InputColumnNames": [
+              "accident"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "id",
+              "model_year",
+              "milage"
+            ],
+            "InputColumnNames": [
+              "id",
+              "model_year",
+              "milage"
+            ]
+          },
+          "e10": {
+            "InputColumnNames": [
+              "accident",
+              "id",
+              "model_year",
+              "milage",
+              "brand",
+              "model",
+              "fuel_type",
+              "engine",
+              "transmission",
+              "ext_col",
+              "int_col",
+              "clean_title"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e12": {
+            "NumberOfTrees": 5,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 0.9993603,
+            "LabelColumnName": "price",
+            "FeatureColumnName": "Features"
+          },
+          "e2": {
+            "InputColumnName": "brand",
+            "OutputColumnName": "brand"
+          },
+          "e3": {
+            "InputColumnName": "model",
+            "OutputColumnName": "model"
+          },
+          "e4": {
+            "InputColumnName": "fuel_type",
+            "OutputColumnName": "fuel_type"
+          },
+          "e5": {
+            "InputColumnName": "engine",
+            "OutputColumnName": "engine"
+          },
+          "e6": {
+            "InputColumnName": "transmission",
+            "OutputColumnName": "transmission"
+          },
+          "e7": {
+            "InputColumnName": "ext_col",
+            "OutputColumnName": "ext_col"
+          },
+          "e8": {
+            "InputColumnName": "int_col",
+            "OutputColumnName": "int_col"
+          },
+          "e9": {
+            "InputColumnName": "clean_title",
+            "OutputColumnName": "clean_title"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.0915201970429087,
+        "RuntimeInSeconds": 2.438,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e8 * e9 * e10 * e12",
+          "e0": {
+            "OutputColumnNames": [
+              "accident"
+            ],
+            "InputColumnNames": [
+              "accident"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "id",
+              "model_year",
+              "milage"
+            ],
+            "InputColumnNames": [
+              "id",
+              "model_year",
+              "milage"
+            ]
+          },
+          "e10": {
+            "InputColumnNames": [
+              "accident",
+              "id",
+              "model_year",
+              "milage",
+              "brand",
+              "model",
+              "fuel_type",
+              "engine",
+              "transmission",
+              "ext_col",
+              "int_col",
+              "clean_title"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e12": {
+            "NumberOfTrees": 5,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 0.9991543,
+            "LabelColumnName": "price",
+            "FeatureColumnName": "Features"
+          },
+          "e2": {
+            "InputColumnName": "brand",
+            "OutputColumnName": "brand"
+          },
+          "e3": {
+            "InputColumnName": "model",
+            "OutputColumnName": "model"
+          },
+          "e4": {
+            "InputColumnName": "fuel_type",
+            "OutputColumnName": "fuel_type"
+          },
+          "e5": {
+            "InputColumnName": "engine",
+            "OutputColumnName": "engine"
+          },
+          "e6": {
+            "InputColumnName": "transmission",
+            "OutputColumnName": "transmission"
+          },
+          "e7": {
+            "InputColumnName": "ext_col",
+            "OutputColumnName": "ext_col"
+          },
+          "e8": {
+            "InputColumnName": "int_col",
+            "OutputColumnName": "int_col"
+          },
+          "e9": {
+            "InputColumnName": "clean_title",
+            "OutputColumnName": "clean_title"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.091489810591965592,
+        "RuntimeInSeconds": 2.126,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e8 * e9 * e10 * e12",
+          "e0": {
+            "OutputColumnNames": [
+              "accident"
+            ],
+            "InputColumnNames": [
+              "accident"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "id",
+              "model_year",
+              "milage"
+            ],
+            "InputColumnNames": [
+              "id",
+              "model_year",
+              "milage"
+            ]
+          },
+          "e10": {
+            "InputColumnNames": [
+              "accident",
+              "id",
+              "model_year",
+              "milage",
+              "brand",
+              "model",
+              "fuel_type",
+              "engine",
+              "transmission",
+              "ext_col",
+              "int_col",
+              "clean_title"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e12": {
+            "NumberOfTrees": 5,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "price",
+            "FeatureColumnName": "Features"
+          },
+          "e2": {
+            "InputColumnName": "brand",
+            "OutputColumnName": "brand"
+          },
+          "e3": {
+            "InputColumnName": "model",
+            "OutputColumnName": "model"
+          },
+          "e4": {
+            "InputColumnName": "fuel_type",
+            "OutputColumnName": "fuel_type"
+          },
+          "e5": {
+            "InputColumnName": "engine",
+            "OutputColumnName": "engine"
+          },
+          "e6": {
+            "InputColumnName": "transmission",
+            "OutputColumnName": "transmission"
+          },
+          "e7": {
+            "InputColumnName": "ext_col",
+            "OutputColumnName": "ext_col"
+          },
+          "e8": {
+            "InputColumnName": "int_col",
+            "OutputColumnName": "int_col"
+          },
+          "e9": {
+            "InputColumnName": "clean_title",
+            "OutputColumnName": "clean_title"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "OneHotEncoding",
+      "e1": "ReplaceMissingValues",
+      "e2": "FeaturizeText",
+      "e3": "FeaturizeText",
+      "e4": "FeaturizeText",
+      "e5": "FeaturizeText",
+      "e6": "FeaturizeText",
+      "e7": "FeaturizeText",
+      "e8": "FeaturizeText",
+      "e9": "FeaturizeText",
+      "e10": "Concatenate",
+      "e11": "FastTreeRegression",
+      "e12": "FastForestRegression",
+      "e13": "LightGbmRegression",
+      "e14": "LbfgsPoissonRegressionRegression",
+      "e15": "SdcaRegression"
+    },
+    "Schema": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e8 * e9 * e10 * (e11 + e12 + e13 + e14 + e15)",
+    "MetricName": "RSquared",
+    "ModelFilePath": "C:\\HDD\\Facultate\\An 1\\Semestru 1\\Covaci\\Laboratoare\\Project\\AutoDealerPro\\AutoDealer.API\\CarPriceModel.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 2,
+    "Subsampling": false,
+    "Type": "RegressionTrainingOption",
+    "TrainingTime": 600,
+    "LabelColumn": "price",
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "TrainValidateSplitValidationOption",
+      "SplitRatio": 0.2
+    }
+  }
+}

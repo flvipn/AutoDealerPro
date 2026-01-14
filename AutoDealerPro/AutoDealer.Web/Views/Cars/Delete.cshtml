@@ -1,0 +1,22 @@
+﻿@using AutoDealer.Data.Models
+@model Car
+
+@{
+    ViewData["Title"] = "Sterge Masina";
+}
+
+<div class="container mt-4">
+    <h3 class="text-danger">Esti sigur ca vrei sa stergi aceasta masina?</h3>
+    <div class="card p-3 mt-3 shadow-sm">
+        <h4>@Model.Model.Brand.Name @Model.Model.Name (@Model.Year)</h4>
+        <hr />
+        <p>Pret: <strong>@Model.Price.ToString("N0") $</strong></p>
+        <p>Kilometraj: @Model.Mileage mi</p>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Sterge Definitiv" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary">Renunta</a>
+        </form>
+    </div>
+</div>

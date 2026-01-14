@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "AutoDealer.GRPC";
+
+package currency;
+
+
+service CurrencyConverter {
+  // Metoda care primeste Dolari si returneaza Euro si Lei
+  rpc GetConvertedPrices (CurrencyRequest) returns (CurrencyResponse);
+}
+
+//(Pretul in USD)
+message CurrencyRequest {
+  double priceInUsd = 1;
+}
+
+
+message CurrencyResponse {
+  double priceInEur = 1;
+  double priceInRon = 2;
+}

@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Acasa";
+}
+
+<div class="container d-flex flex-column justify-content-center align-items-center" style="min-height: 60vh;">
+
+    <div class="mb-4 animate__animated animate__fadeInDown">
+        <i class="bi bi-speedometer2 text-primary" style="font-size: 6rem;"></i>
+    </div>
+
+    <h1 class="display-4 fw-bold mb-3">
+        AutoDealer<span class="text-info">Pro</span>
+    </h1>
+
+    <p class="lead text-muted text-center mb-5" style="max-width: 600px;">
+        Platforma ta digitală pentru gestionarea parcului auto.
+        <br />
+        Administrează stocul, prețurile și detaliile tehnice într-un singur loc.
+    </p>
+
+    <div class="d-flex gap-3">
+        <a asp-controller="Cars" asp-action="Index" class="btn btn-primary btn-lg px-5 shadow">
+            <i class="bi bi-search me-2"></i> Vezi Ofertele
+        </a>
+
+        <a asp-controller="Cars" asp-action="Create" class="btn btn-outline-secondary btn-lg px-4">
+            <i class="bi bi-plus-lg me-2"></i> Adaugă Mașină
+        </a>
+    </div>
+
+</div>

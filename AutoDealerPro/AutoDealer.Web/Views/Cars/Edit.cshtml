@@ -1,0 +1,72 @@
+﻿@model AutoDealer.Data.Models.Car
+
+@{
+    ViewData["Title"] = "Modifica Masina";
+}
+
+<div class="container mt-4">
+    <h2>Modifica o masina</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Edit">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="form-group mb-3">
+                    <label class="control-label">Brand & Model</label>
+                    <select asp-for="ModelId" class="form-control" asp-items="ViewBag.ModelId"></select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Year" class="control-label">An Fabricatie</label>
+                    <input asp-for="Year" class="form-control" />
+                    <span asp-validation-for="Year" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Price" class="control-label">Pret ($)</label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Mileage" class="control-label">Kilometraj (mile)</label>
+                    <input asp-for="Mileage" class="form-control" />
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="control-label">Combustibil</label>
+                        <select asp-for="FuelId" class="form-control" asp-items="ViewBag.FuelId"></select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="control-label">Transmisie</label>
+                        <select asp-for="TransmissionId" class="form-control" asp-items="ViewBag.TransmissionId"></select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Horsepower" class="control-label">Cai Putere</label>
+                        <input asp-for="Horsepower" class="form-control" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="EngineVolume" class="control-label">Volum Motor (L)</label>
+                        <input asp-for="EngineVolume" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-group form-check mb-3">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="HasAccident" /> A avut accident?
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Salveaza" class="btn btn-success" />
+                    <a asp-action="Index" class="btn btn-secondary">Renunta</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
