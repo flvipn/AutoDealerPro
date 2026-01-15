@@ -38,7 +38,7 @@ The solution is split into three distinct projects:
 
 ### Prerequisites
 * Visual Studio 2022
-* .NET 8.0 SDK
+* .NET 10.0 SDK
 * SQL Server (LocalDB or Express)
 
 ### How to Run
