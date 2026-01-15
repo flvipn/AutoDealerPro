@@ -1,6 +1,6 @@
 # AutoDealerPro
 
-AutoDealerPro is a distributed automotive management system built with **.NET 8**. The solution integrates a modern MVC web application with **Artificial Intelligence (ML.NET)** for price prediction and **gRPC microservices** for real-time financial calculations.
+AutoDealerPro is a distributed automotive management system built with **.NET 10**. The solution integrates a modern MVC web application with **Artificial Intelligence (ML.NET)** for price prediction and **gRPC microservices** for real-time financial calculations.
 
 ## Project Overview
 
